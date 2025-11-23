@@ -1,14 +1,14 @@
 import Hero from "../components/Hero";
 import "../components/BannedItems.css";
 import { useMemo, useState } from "react";
-import { BannedItems, cardImgs } from "../components/data.js";
+import { BannedItems, bannedCardImgs } from "../components/data.js";
 
 export default function BannedItemsPage() {
   const [slide, setSlide] = useState(0);
   const slides = useMemo(() => {
     const chunks = [];
-    for (let i = 0; i < cardImgs.length; i += 3)
-      chunks.push(cardImgs.slice(i, i + 3));
+    for (let i = 0; i < bannedCardImgs.length; i += 3)
+      chunks.push(bannedCardImgs.slice(i, i + 3));
     return chunks;
   }, []);
   const current = slides[slide] ?? [];

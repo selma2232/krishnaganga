@@ -58,55 +58,67 @@ export const cardImgs = [
   "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&auto=format&fit=crop&q=60",
 ];
 
+export const bannedCardImgs = [
+  "https://plus.unsplash.com/premium_photo-1681305757960-8346c233ff4b?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2VsbCUyMHBob25lfGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wfGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXN8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1673870243837-27cda15c1425?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bG90aW9uc3xlbnwwfHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNhbWVyYXN8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1592066021152-c52430a4a8f6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGtuaXZlc3xlbnwwfHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1503792501406-2c40da09e1e2?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Npc3NvcnxlbnwwfHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlkZW8lMjBnYW1lc3xlbnwwfHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1710552524021-a8dc68c2a8dc?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmFsdWFibGUlMjBpdGVtc3xlbnwwfHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1lZGljYXRpb24lMjB3aXRob3V0JTIwcHJlc2NpcHRpb258ZW58MHx8MHx8fDA%3D",
+];
+
 export const BannedItems = [
   {
     title: "Cell phones",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Cell phones are not allowed to protect the privacy of other clients.",
   },
   {
     title: "Laptops",
-    description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+    description: "Laptops are not allowed to prevent disturbances.",
   },
   {
     title: "Perfumes",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Perfumes are not allowed as some clients may have allergies to strong scents.",
   },
   {
     title: "After-shave lotions",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "After-shave lotions are not allowed as some clients may have allergies to strong scents.",
   },
   {
     title: "Cameras",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Cameras are not allowed to avoid digital distractions and interfernce.",
   },
   {
     title: "Knives",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Knives are prohibited to ensure the safety of all clients and staff.",
   },
   {
     title: "Scissors",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Scissors are prohibited to ensure the safety of all clients and staff.",
   },
   {
     title: "Video games",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Video games are not allowed to encourage real-life social interactions.",
   },
   {
     title: "Valuable items",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Valuable items like gold, jewelry, and precious stones are not allowed to prevent loss or theft.",
   },
   {
     title: "Medications without a prescription",
     description:
-      "Relapse prevention programs can help reduce the risk of a return to self-destructive behavior.",
+      "Medications without a prescription are not allowed to ensure client safety and proper medical supervision.",
   },
 ];

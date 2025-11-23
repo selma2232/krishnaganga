@@ -1,6 +1,6 @@
 .contact-section {
   padding: 8px 20px 48px;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 0.6fr;
@@ -13,7 +13,8 @@
 
 .contact-form {
   display: grid;
-  gap: 12px;
+  gap: 24px;
+  max-width: 600px;
 }
 
 .contact-form .grid-two {
@@ -23,8 +24,9 @@
 }
 
 .contact-form label {
-  display: block;
+  /* display: block; */
   font-size: 14px;
+  font-weight: bold;
   margin-bottom: 6px;
 }
 

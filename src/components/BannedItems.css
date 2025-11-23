@@ -1,6 +1,6 @@
 .banned-section {
   padding-top: 80px;
-  padding-bottom: 24px;
+  padding-bottom: 40px;
   max-width: 1200px;
   align-items: center;
 }
@@ -42,7 +42,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: 1200px;
-  gap: 8px;
+  gap: 16px;
 }
 
 .banned-section .card {
@@ -87,19 +87,29 @@
   position: absolute;
   bottom: 8px;
   right: 8px;
+  padding: 4px;
 }
 
 .banned-section .dots {
-  bottom: -20px;
+  bottom: -40px;
+  gap: 8px;
 }
 
 .banned-section .dot {
   background: none;
-  border: 2px solid #111;
+  border: 1px solid #231f20;
   height: 12px;
   width: 12px;
-  border-radius: 50%;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  cursor: pointer;
+}
+
+.banned-section .dot.active {
+  background: #231f20;
+}
+
+.banned-section .card figcaption {
+  color: #727272;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 
-export default function Contact({ onSubmit, className = "" }) {
+export default function Contact({ onSubmit }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -10,6 +10,8 @@ export default function Contact({ onSubmit, className = "" }) {
   });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
+
+  console.log(errors, status);
 
   function validate() {
     const e = {};
@@ -56,17 +58,21 @@ export default function Contact({ onSubmit, className = "" }) {
   }
 
   return (
-    <section className={`contact-section container ${className}`}>
+    <section className={`contact-section container`}>
       <div>
         <h3>Send us Message</h3>
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="grid-two">
             <div>
-              <label>Name*</label>
+              <label>
+                Name<span style={{ color: "#c8102e" }}> *</span>
+              </label>
               <input name="name" value={form.name} onChange={onChange} />
             </div>
             <div>
-              <label>Email*</label>
+              <label>
+                Email<span style={{ color: "#c8102e" }}> *</span>
+              </label>
               <input
                 type="email"
                 name="email"
@@ -76,11 +82,15 @@ export default function Contact({ onSubmit, className = "" }) {
             </div>
           </div>
           <div>
-            <label>Subject</label>
+            <label>
+              Subject<span style={{ color: "#c8102e" }}> *</span>
+            </label>
             <input name="subject" value={form.subject} onChange={onChange} />
           </div>
           <div>
-            <label>Message</label>
+            <label>
+              Message<span style={{ color: "#c8102e" }}> *</span>
+            </label>
             <textarea
               name="message"
               rows={5}
