@@ -1,0 +1,44 @@
+.treatment-section {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+.treatment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 36px;
+  text-align: center;
+}
+
+.treatment-title {
+  margin-bottom: 44px;
+  font-family: "lato", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #222;
+}
+
+.treatment-container h4 {
+  text-align: left;
+  color: #6b6864;
+
+  margin-block-start: 0.5em;
+}
+
+.treatment-description {
+  font-size: 16px;
+  color: #727272;
+  text-align: justify;
+  margin-bottom: 36px;
+}
+
+.treatment-list {
+  font-size: 14px;
+  text-align: left;
+  color: #6b6864;
+  padding-left: 1.2rem;
+}
+
+.treatment-list li {
+  margin-bottom: 8px;
+}

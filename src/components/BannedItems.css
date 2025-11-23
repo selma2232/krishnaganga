@@ -1,0 +1,13 @@
+.banned-section {
+  color: "#222";
+  padding: "48px 16px";
+  text-align: "center";
+}
+
+.banned-section ::after {
+  margin: 0;
+  font-size: 32;
+  letter-spacing: 0.5;
+  position: "relative";
+  display: "inline-block";
+}

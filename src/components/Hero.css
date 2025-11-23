@@ -1,0 +1,150 @@
+:root {
+  --accent: #c8102e;
+  --dark: #231f20;
+}
+
+.hero {
+  position: relative;
+  background: none;
+  color: #fff;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 0;
+  height: 600px;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 0 0px;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 550px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #f0c419;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.hero-dots .dot.active {
+  background: #f0c419;
+  border-color: #f0c419;
+}
+
+.hero-nav {
+  position: absolute;
+  top: 300px;
+  background: #111;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 11;
+  border-radius: 50%;
+  border: none;
+}
+.hero-nav.left {
+  left: 20px;
+}
+.hero-nav.right {
+  right: 20px;
+}
+
+.copy {
+  color: #111;
+}
+
+.overcome {
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin: 0 0 6px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #111;
+  color: #fff;
+  padding: 10px 16px 10px 0;
+  border-radius: 4px;
+}
+
+.label-accent {
+  display: inline-block;
+  width: 16px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 3px 0 0 3px;
+}
+
+.label-text {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.sub {
+  margin: 20px 0 6px;
+  color: #444;
+  font-size: 18px;
+}
+
+.programs {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+@media (max-width: 1000px) {
+  .overcome {
+    font-size: 48px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
+  }
+  .art {
+    order: -1;
+  }
+}

@@ -1,0 +1,114 @@
+import React, { useState } from "react";
+import "./Contact.css";
+
+export default function Contact({ onSubmit, className = "" }) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
+
+  function validate() {
+    const e = {};
+    if (!form.name.trim()) e.name = "Name is required";
+    if (!form.email.trim()) e.email = "Email is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      e.email = "Enter a valid email";
+    if (!form.subject.trim()) e.subject = "Subject is required";
+    if (!form.message.trim()) e.message = "Message is required";
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  }
+
+  async function handleSubmit(ev) {
+    ev.preventDefault();
+    if (!validate()) return;
+    setStatus({ loading: true, ok: null, msg: "" });
+
+    try {
+      if (onSubmit && typeof onSubmit === "function") {
+        await onSubmit(form);
+      } else {
+        await new Promise((r) => setTimeout(r, 700));
+      }
+      setStatus({
+        loading: false,
+        ok: true,
+        msg: "Thank you — your message has been sent.",
+      });
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setErrors({});
+    } catch (err) {
+      setStatus({
+        loading: false,
+        ok: false,
+        msg: "Failed to send message. Try again later.",
+      });
+      console.error(err);
+    }
+  }
+
+  function onChange(e) {
+    setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
+  }
+
+  return (
+    <section className={`contact-section container ${className}`}>
+      <div>
+        <h3>Send us Message</h3>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="grid-two">
+            <div>
+              <label>Name*</label>
+              <input name="name" value={form.name} onChange={onChange} />
+            </div>
+            <div>
+              <label>Email*</label>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={onChange}
+              />
+            </div>
+          </div>
+          <div>
+            <label>Subject</label>
+            <input name="subject" value={form.subject} onChange={onChange} />
+          </div>
+          <div>
+            <label>Message</label>
+            <textarea
+              name="message"
+              rows={5}
+              value={form.message}
+              onChange={onChange}
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <aside className="contact-aside">
+        <h3>Get in touch</h3>
+        <div>
+          <div>
+            <strong>Address:</strong> Janapath Tole, Birtamode, Nepal
+          </div>
+          <div>
+            <strong>E-Mail:</strong> krishnagarg2@gmail.com
+          </div>
+          <div>
+            <strong>Tel:</strong> 021-475089
+          </div>
+          <div>
+            <strong>Fax:</strong> 021-476089
+          </div>
+        </div>
+      </aside>
+    </section>
+  );
+}

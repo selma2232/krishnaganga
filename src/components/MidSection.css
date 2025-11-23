@@ -1,0 +1,134 @@
+.mid-section .cards-wrap {
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+  position: relative;
+}
+
+.mid-section .container.section {
+  padding-bottom: 32px;
+}
+
+.mid-section .section {
+  padding-top: 80px;
+  padding-bottom: 24px;
+}
+.mid-section .section-title {
+  font-weight: 800;
+  font-size: 26px;
+  margin: 0 0 26px;
+  text-align: center;
+  display: block;
+}
+
+.mid-section .section-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #f0c419;
+  border-radius: 2px;
+  width: 96%;
+  margin: 10px auto 0;
+}
+
+.cards-wrap {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.card {
+  padding: 0;
+}
+
+.mid-section .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 0;
+  max-width: 1200px;
+  align-items: stretch;
+}
+.mid-section .card {
+  background: #fff;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  margin: 0;
+}
+.mid-section .card figure {
+  margin: 0;
+  padding: 0;
+}
+.mid-section .card-title {
+  margin: 24px 0;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  font-size: 18px;
+}
+.mid-section .card .thumb {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+.mid-section .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mid-section .card .thumb .badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: #f0c419;
+  color: #111;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+.mid-section .card figcaption {
+  padding: 0 12px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.mid-section .card p {
+  margin: 8px 0 0;
+  color: #555;
+  font-size: 14px;
+  flex: 1;
+}
+.mid-section .cards-wrap .dots {
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.mid-section .dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #111;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.mid-section .dots .dot.active {
+  background: #111;
+}
+
+@media (max-width: 900px) {
+  .mid-section .cards {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}

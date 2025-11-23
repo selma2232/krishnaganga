@@ -1,0 +1,109 @@
+.our-causes-section.section {
+  padding: 24px 0 0 0;
+}
+.our-causes-section h2 {
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+.our-causes-section .items {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.our-causes-section .img-thumb {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.our-causes-section figure {
+  margin: 0;
+  padding: 0;
+}
+.our-causes-section .img-thumb img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.our-causes-section .col-xs-12.col-md-6 h2 {
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+}
+
+.our-causes-section .col-xs-12.col-md-6.items h2 {
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+}
+
+.our-causes-section .col-xs-12.col-md-6:first-of-type .img-thumb img {
+  height: 188px;
+  width: 545px;
+}
+.our-causes-section .col-xs-12.col-sm-6.col-md-6 .img-thumb img {
+  height: 188px;
+  width: 314px;
+}
+
+.our-causes-section .img-thumb:hover img {
+  transform: scale(1.05);
+}
+.our-causes-section .h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+.our-causes-section .heading-block .h4 {
+  margin: 15px 0;
+  padding: 0;
+}
+.our-causes-section p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-right: 20px;
+  margin: 0;
+}
+.our-causes-section .cause-summary {
+  padding-left: 0;
+}
+.our-causes-section .programme-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .our-causes-section .programme-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.one-block {
+  margin-bottom: 0;
+}
+
+/* Grid system */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+}
+.col-xs-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0;
+  padding-left: 0;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
