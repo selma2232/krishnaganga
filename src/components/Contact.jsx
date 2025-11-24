@@ -11,7 +11,7 @@ export default function Contact({ onSubmit }) {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 
-  console.log(errors);
+  // console.log(errors);
 
   function validate() {
     const e = {};

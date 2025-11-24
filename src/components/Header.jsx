@@ -20,6 +20,14 @@ function Header() {
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
+                href="https://google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google"
+              >
+                <i className="fab fa-google"></i>
+              </a>
+              <a
                 href="https://x.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -42,14 +50,6 @@ function Header() {
                 aria-label="Pinterest"
               >
                 <i className="fab fa-pinterest"></i>
-              </a>
-              <a
-                href="https://google.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Google"
-              >
-                <i className="fab fa-google"></i>
               </a>
             </nav>
             <div className="cta">

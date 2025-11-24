@@ -1,0 +1,53 @@
+.inputStyle {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6;
+}
+
+.textareaStyle {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6;
+  resize: vertical;
+}
+
+.buttonStyle {
+  background: #1a73e8;
+  color: #fff;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 6;
+  cursor: pointer;
+}
+
+.message-box-section {
+  position: fixed;
+  top: 24%;
+  width: 320;
+  max-width: calc(100vw - 100px);
+  height: 380;
+  background: #fff;
+  border-radius: 12;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  padding: 16;
+  transition: right 0.25s ease;
+  z-index: 1000;
+}
+
+.message-box-button {
+  position: "fixed";
+  font-size: 26;
+  right: 20;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 56;
+  height: 56;
+  border-radius: 28;
+  border: none;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 1001;
+}

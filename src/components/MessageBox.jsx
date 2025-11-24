@@ -34,7 +34,7 @@ export default function MessageBox({ to = "krishnagarg2@gmail.com" }) {
           height: 56,
           borderRadius: 28,
           border: "none",
-          background: open ? "#444" : "#ff3b30",
+          background: open ? "#e8e6e6" : "#e8e6e6",
           color: "#fff",
           boxShadow: "0 6px 16px rgba(0,0,0,.25)",
           cursor: "pointer",
