@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 0.6fr;
   gap: 32px;
+  position: relative;
 }
 
 .contact-section h3 {
@@ -53,23 +54,6 @@
   cursor: pointer;
 }
 
-.contact-aside {
-  color: #727272;
-  line-height: 1.9;
-  font-family: "Lato", sans-serif;
-}
-.contact-aside h3 {
-  font-size: 26px;
-  font-weight: 300;
-  margin-bottom: 32px;
-}
-
-.contact-aside a {
-  color: #f0c419;
-
-  text-decoration: none;
-}
-
 .contact-section .status-message {
   position: fixed;
   top: 20px;
@@ -88,4 +72,55 @@
   color: #f0c419;
   cursor: pointer;
   margin-left: 12px;
+}
+
+.contact-aside::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 420px;
+  background: #eeebe6;
+  margin-bottom: 16px;
+  top: 0;
+  left: calc(50% + 80px);
+}
+
+.contact-aside {
+  color: #727272;
+  line-height: 1.9;
+  font-family: "Lato", sans-serif;
+}
+
+.contact-aside h3 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.contact-aside a {
+  color: #f0c419;
+
+  text-decoration: none;
+}
+
+.contact-aside strong {
+  width: 80px;
+  display: block;
+  color: #727272;
+  float: left;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.contact-aside span {
+  display: block;
+  margin: 16px 0;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+
+.contact-aside span:first-child {
+  display: block;
+  margin: 32px 0;
 }

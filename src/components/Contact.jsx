@@ -122,21 +122,21 @@ export default function Contact({ onSubmit }) {
       <aside className="contact-aside">
         <h3>Get in touch</h3>
         <div>
-          <div>
+          <span>
             <strong>Address:</strong> Janapath Tole,Biratnagar
             <br />
             Nepal
-          </div>
-          <div>
+          </span>
+          <span>
             <strong>E-Mail:</strong>{" "}
-            <a href="mailto:krishnaganga@gmail.com">krishnaganga@gmail.com</a>
-          </div>
-          <div>
+            <a href="mailto:krishnaganga@gmail.com"> krishnaganga@gmail.com</a>
+          </span>
+          <span>
             <strong>Tel:</strong> 021-475089
-          </div>
-          <div>
+          </span>
+          <span>
             <strong>Fax:</strong> 021-476089
-          </div>
+          </span>
         </div>
       </aside>
     </section>
