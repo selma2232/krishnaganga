@@ -9,6 +9,7 @@
 
 .contact-section h3 {
   margin-top: 0;
+  margin-bottom: 32px;
 }
 
 .contact-form {
@@ -53,6 +54,38 @@
 }
 
 .contact-aside {
-  color: #666;
+  color: #727272;
   line-height: 1.9;
+  font-family: "Lato", sans-serif;
+}
+.contact-aside h3 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.contact-aside a {
+  color: #f0c419;
+
+  text-decoration: none;
+}
+
+.contact-section .status-message {
+  position: fixed;
+  top: 20px;
+  left: 40%;
+  background-color: #231f20;
+  color: #f0c419;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contact-section .status-message button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f0c419;
+  cursor: pointer;
+  margin-left: 12px;
 }

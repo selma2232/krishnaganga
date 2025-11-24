@@ -11,7 +11,7 @@ export default function Contact({ onSubmit }) {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 
-  console.log(errors, status);
+  console.log(errors);
 
   function validate() {
     const e = {};
@@ -43,6 +43,10 @@ export default function Contact({ onSubmit }) {
       });
       setForm({ name: "", email: "", subject: "", message: "" });
       setErrors({});
+
+      setTimeout(() => {
+        setStatus({ msg: "" });
+      }, 3000);
     } catch (err) {
       setStatus({
         loading: false,
@@ -53,12 +57,16 @@ export default function Contact({ onSubmit }) {
     }
   }
 
+  function closePopup() {
+    setStatus({ msg: "" });
+  }
+
   function onChange(e) {
     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
   }
 
   return (
-    <section className={`contact-section container`}>
+    <section className="contact-section container">
       <div>
         <h3>Send us Message</h3>
         <form onSubmit={handleSubmit} className="contact-form">
@@ -100,16 +108,28 @@ export default function Contact({ onSubmit }) {
           </div>
           <button type="submit">Submit</button>
         </form>
+
+        {status.msg && (
+          <div className="status-message">
+            <span>{status.msg}</span>
+            <button onClick={closePopup} className="btn-cross">
+              <i className="fas fa-times"></i>
+            </button>
+          </div>
+        )}
       </div>
 
       <aside className="contact-aside">
         <h3>Get in touch</h3>
         <div>
           <div>
-            <strong>Address:</strong> Janapath Tole, Birtamode, Nepal
+            <strong>Address:</strong> Janapath Tole,Biratnagar
+            <br />
+            Nepal
           </div>
           <div>
-            <strong>E-Mail:</strong> krishnagarg2@gmail.com
+            <strong>E-Mail:</strong>{" "}
+            <a href="mailto:krishnaganga@gmail.com">krishnaganga@gmail.com</a>
           </div>
           <div>
             <strong>Tel:</strong> 021-475089

@@ -36,9 +36,8 @@ header,
 }
 
 .logo {
-  height: 74px;
-  object-fit: contain;
-  filter: sepia(100%) saturate(600%) hue-rotate(-10deg) brightness(0.9);
+  max-width: 100%;
+  height: auto;
 }
 
 .top-actions {

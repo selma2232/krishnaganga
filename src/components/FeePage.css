@@ -1,0 +1,65 @@
+.fee-page {
+  background-color: #fff;
+}
+
+.fee-header {
+  padding: 48px 16px;
+  text-align: center;
+  color: #222;
+}
+
+.fee-header h1 {
+  font-weight: 500;
+  text-align: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.fee-header h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f0c419;
+}
+
+.fee-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 50px;
+}
+
+.fee-content .intro {
+  color: #727272;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.fee-content ul {
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #727272;
+  margin-bottom: 16px;
+}
+
+.fee-content ul li {
+  margin-bottom: 6px;
+}
+
+.fee-content .note {
+  margin-top: 16px;
+  color: #727272;
+}
+
+.fee-content .tax {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #727272;
+}
