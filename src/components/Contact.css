@@ -45,13 +45,19 @@
 }
 
 .contact-form button {
-  background: #e06a2d;
+  background: #f0c419;
   color: #fff;
   border: 0;
-  padding: 10px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
   width: 90px;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.contact-form button:hover {
+  background: #ae8f11;
+  transform: translateY(2px);
 }
 
 .contact-section .status-message {
@@ -100,7 +106,6 @@
 
 .contact-aside a {
   color: #f0c419;
-
   text-decoration: none;
 }
 

@@ -117,7 +117,7 @@ header,
   cursor: pointer;
   padding: 10px 6px;
   border-radius: 2px;
-  color: #2b2b2b;
+  color: #525252;
   text-decoration: none;
 }
 
@@ -140,7 +140,9 @@ header,
 }
 
 .nav a:hover {
-  background: rgba(0, 0, 0, 0.03);
+  background: #f0c419;
+  color: #111;
+  transform: translateX(2px);
 }
 
 .search {

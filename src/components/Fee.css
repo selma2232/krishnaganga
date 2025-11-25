@@ -43,14 +43,25 @@
 }
 
 .fee-content ul {
-  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: -40px;
   line-height: 1.8;
-  color: #727272;
   margin-bottom: 16px;
 }
 
 .fee-content ul li {
   margin-bottom: 6px;
+  flex: 0 0 60%;
+  background-color: #52525210;
+  padding-left: 25px;
+  color: #525252;
+}
+
+.fee-content ul li::before {
+  content: "✓";
 }
 
 .fee-content .note {

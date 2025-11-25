@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header>
-      {/* Topbar */}
       <div className="topbar">
         <div className="container">
           <img src={logo} alt="logo" className="logo" />
@@ -64,7 +63,6 @@ function Header() {
         </div>
       </div>
 
-      {/* Navbar */}
       <div className="navbar">
         <div className="container nav-inner">
           <button id="nav-toggle" className="nav-toggle">

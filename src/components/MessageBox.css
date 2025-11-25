@@ -24,7 +24,7 @@
 }
 
 .buttonStyle {
-  background: #1a73e8;
+  background: #f0c419;
   color: white;
   border: none;
   padding: 10px 14px;
@@ -35,9 +35,17 @@
   transition: all 0.25s ease;
 }
 
+.message-icon {
+  font-size: 32px;
+  color: #ff0000;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
 .buttonStyle:hover {
-  background: #1557b0;
-  transform: translateY(-1px);
+  background: #ae8f11;
+  transform: translateY(2px);
+  cursor: pointer;
 }
 
 .message-box-button {
@@ -49,7 +57,7 @@
 
   width: 60px;
   height: 60px;
-  background: #1a73e8;
+  background: #e8e6e6;
   border: none;
   border-radius: 50%;
   color: white;
@@ -65,7 +73,7 @@
 }
 
 .message-box-button:hover {
-  background: #1557b0;
+  background: #e8e6e6;
   transform: translateY(-50%) scale(1.1);
 }
 

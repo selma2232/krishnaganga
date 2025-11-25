@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MessageBox from "./components/MessageBox";
@@ -13,6 +13,11 @@ import DonatePage from "./pages/DonatePage";
 import VolunteerPage from "./pages/VolunteerPage";
 
 function App() {
+  const location = useLocation();
+
+  const hiddenRoutes = ["/contact-us", "/donate", "/volunteer"];
+  const hideMessageBox = hiddenRoutes.includes(location.pathname);
+
   return (
     <div>
       <Header />
@@ -28,7 +33,7 @@ function App() {
         <Route path="/volunteer" element={<VolunteerPage />} />
       </Routes>
       <Footer />
-      <MessageBox />
+      {!hideMessageBox && <MessageBox />}
     </div>
   );
 }

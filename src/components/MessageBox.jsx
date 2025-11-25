@@ -37,9 +37,9 @@ export default function MessageBox({ to = "krishnagarg2@gmail.com" }) {
         className="message-box-button"
       >
         {open ? (
-          <i className="fas fa-times"></i>
+          <i className="fas fa-angle-right message-icon"></i>
         ) : (
-          <i className="fas fa-comment"></i>
+          <i className="fas fa-comment message-icon"></i>
         )}
       </button>
 
