@@ -16,7 +16,7 @@ export default function Footer() {
           </p>
 
           <ul className="contact-list">
-            <li>
+            <li className="home-list">
               <i className="fas fa-home"></i> Janapath Tole, Biratnagar, Nepal
             </li>
             <li>
