@@ -1,4 +1,4 @@
-import "./Hero.css";
+import "../styles/Hero.css";
 import { useState, useEffect, useRef } from "react";
 import slideImg1 from "../assets/slideImage1.png";
 import slideImg2 from "../assets/slideImage2.png";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Contact.css";
+import "../styles/Contact.css";
 
 export default function Contact({ onSubmit }) {
   const [form, setForm] = useState({
@@ -8,6 +8,7 @@ export default function Contact({ onSubmit }) {
     subject: "",
     message: "",
   });
+
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 

@@ -1,4 +1,4 @@
-import "./Rejuvenate.css";
+import "../styles/Rejuvenate.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import OurCauses from "./OurCauses";
 

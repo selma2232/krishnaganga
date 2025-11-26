@@ -1,4 +1,4 @@
-import "../components/DonatePage.css";
+import "../styles/DonatePage.css";
 
 export default function DonatePage() {
   return (

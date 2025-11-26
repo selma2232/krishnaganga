@@ -1,4 +1,4 @@
-import "./Fee.css";
+import "../styles/Fee.css";
 
 function Fee() {
   return (

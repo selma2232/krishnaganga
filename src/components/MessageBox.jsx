@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import "./MessageBox.css";
+import "../styles/MessageBox.css";
 
 export default function MessageBox({ to = "krishnagarg2@gmail.com" }) {
   const [mounted, setMounted] = useState(false);

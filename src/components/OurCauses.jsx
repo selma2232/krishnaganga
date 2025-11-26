@@ -1,4 +1,4 @@
-import "./OurCauses.css";
+import "../styles/OurCauses.css";
 
 function OurCauses() {
   return (

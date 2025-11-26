@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import "./MidSection.css";
+import "../styles/MidSection.css";
 
 import { allCards, cardImgs } from "./data.js";
 
@@ -17,7 +17,8 @@ function MidSection() {
     <div className="mid-section">
       <section className="container section">
         <h3 className="section-title">
-          Dedicated Team Of Counsellor, Psychologist, Psychiatrist & Other Team Of Doctors
+          Dedicated Team Of Counsellor, Psychologist, Psychiatrist & Other Team
+          Of Doctors
         </h3>
         <div className="cards-wrap">
           <div className="cards">

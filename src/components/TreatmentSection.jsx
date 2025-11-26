@@ -1,4 +1,4 @@
-import "./TreatmentSection.css";
+import "../styles/TreatmentSection.css";
 
 export default function TreatmentSection() {
   return (
