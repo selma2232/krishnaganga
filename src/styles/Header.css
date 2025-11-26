@@ -145,33 +145,6 @@ header,
   transform: translateX(2px);
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-left: 1px solid rgba(0, 0, 0, 0.06);
-  padding-left: 20px;
-  margin-left: 20px;
-}
-
-.search input {
-  padding: 10px 12px;
-  border: none;
-  min-width: 220px;
-  background: transparent;
-  font-size: 14px;
-  outline: none;
-  box-shadow: none;
-}
-
-.search button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: #111;
-}
-
 .nav-toggle {
   display: none;
   background: transparent;

@@ -34,7 +34,7 @@ export default function DurationPage() {
 
       <section
         className="container"
-        style={{ padding: "0 20px", margin: "0 auto" }}
+        style={{ padding: "24px 0 64px", margin: "0 auto" }}
       >
         <p style={{ color: "#727272", lineHeight: 1.8, textAlign: "center" }}>
           Minimum period required for treatment is 90 to 120 days and may be

@@ -1,8 +1,9 @@
 import "../styles/Header.css";
-
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
-function Header() {
+import SearchBox from "./SearchBox";
+
+function Header({ onSearch }) {
   return (
     <header>
       <div className="topbar">
@@ -113,12 +114,13 @@ function Header() {
               CONTACT US
             </NavLink>
           </nav>
-          <div className="search">
+          {/* <div className="search">
             <input placeholder="Search Here" />
             <button>
               <i className="fas fa-search"></i>
             </button>
-          </div>
+          </div> */}
+          <SearchBox onSearch={onSearch} />
         </div>
       </div>
     </header>

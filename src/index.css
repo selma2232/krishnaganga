@@ -171,12 +171,6 @@ body {
   font-size: 28px;
 }
 
-/* About component styles */
-.about-component {
-  padding: 56px 0;
-  background: #fff;
-  color: #333;
-}
 .about-title {
   text-align: center;
   font-size: 28px;

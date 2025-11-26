@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -11,16 +12,23 @@ import DurationPage from "./pages/DurationPage";
 import ContactPage from "./pages/ContactPage";
 import DonatePage from "./pages/DonatePage";
 import VolunteerPage from "./pages/VolunteerPage";
+import SearchResultsPage from "./pages/SearchResultsPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const location = useLocation();
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const hiddenRoutes = ["/contact-us", "/donate", "/volunteer"];
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const hiddenRoutes = ["/contact-us"];
   const hideMessageBox = hiddenRoutes.includes(location.pathname);
 
   return (
     <div>
-      <Header />
+      <Header onSearch={handleSearch} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-us" element={<AboutPage />} />
@@ -31,6 +39,11 @@ function App() {
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route
+          path="/search"
+          element={<SearchResultsPage query={searchQuery} />}
+        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       {!hideMessageBox && <MessageBox />}

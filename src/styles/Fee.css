@@ -71,6 +71,7 @@ ol > li:first-child {
   list-style: none;
   line-height: 1.8;
   margin-bottom: 16px;
+  margin-left: 24px;
 }
 .fee-content .external-list {
   margin-top: 16px;
@@ -101,7 +102,7 @@ ol > li:first-child {
 }
 
 .fee-content .note {
-  margin-top: 64px;
+  margin-top: 80px;
   color: #727272;
   font-style: italic;
   text-align: center;
