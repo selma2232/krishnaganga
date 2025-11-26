@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 function SearchResultsPage({ query }) {
   return (
     <div className="container search-results">
-      <h1 className="search-title">Search Results</h1>
-      <p>You searched for: {query}</p>
+      <h3 className="search-title">Search Results</h3>
+      <p>
+        You searched for: <span>{query}</span>
+      </p>
 
-      <Link to="/">Go back to Home</Link>
+      <Link to="/" className="return-link">
+        <span>Go back to Home</span> →
+      </Link>
     </div>
   );
 }
