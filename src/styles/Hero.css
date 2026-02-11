@@ -7,25 +7,47 @@
   position: relative;
   background: none;
   color: #fff;
+
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch;
-  gap: 0;
+
   height: 600px;
-  max-width: auto;
   margin: 0 auto;
-  padding: 0 0px;
+  padding: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+.art {
   position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 350px;
+  max-height: 550px;
+
+  overflow: hidden;
 }
+
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+  display: block;
+}
+
+
 
 .hero-dots {
   position: absolute;
@@ -45,9 +67,6 @@
   border: 2px solid #f0c419;
   cursor: pointer;
   padding: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 .hero-dots .dot.active {
@@ -57,23 +76,31 @@
 
 .hero-nav {
   position: absolute;
-  top: 300px;
+  top: 50%;
+  transform: translateY(-50%);
+
   background: #111;
   color: #fff;
+
   width: 44px;
   height: 44px;
   font-size: 32px;
-  cursor: pointer;
-  z-index: 11;
   border-radius: 50%;
   border: none;
+  cursor: pointer;
+
+  z-index: 11;
 }
+
 .hero-nav.left {
   left: 20px;
 }
+
 .hero-nav.right {
   right: 20px;
 }
+
+
 
 .copy {
   color: #111;
@@ -97,7 +124,6 @@
 }
 
 .label-accent {
-  display: inline-block;
   width: 16px;
   height: 28px;
   background: var(--accent);
@@ -107,7 +133,6 @@
 .label-text {
   font-size: 18px;
   font-weight: 700;
-  text-transform: none;
 }
 
 .sub {
@@ -123,28 +148,58 @@
   letter-spacing: 1px;
 }
 
-.art {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
-.art img {
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero-grid {
+    height: auto;
+  }
+
+  .art {
+  height: 22vh;
+    min-height: 14px;
   width: 100%;
+  overflow: hidden;
+  }
+
+  
+  .hero-image {
+   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
+  object-position: center left;
+  display: block;
+  }
+
+  .hero-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-nav.left {
+    left: 6px;
+  }
+
+  .hero-nav.right {
+    right: 6px;
+  }
+
+  .hero-dots {
+    bottom: 40px;
+  }
+  .hero {
+  position: relative;
+  background: none;
+  color: #fff;
+
+  width: 100%;
+  overflow: hidden;
 }
 
-@media (max-width: 1000px) {
-  .overcome {
-    font-size: 48px;
-  }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    padding: 40px 0;
-  }
-  .art {
-    order: -1;
-  }
 }

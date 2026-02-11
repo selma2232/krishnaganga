@@ -2,7 +2,9 @@
   padding-top: 80px;
   padding-bottom: 40px;
   max-width: 1200px;
+  margin: 0 auto;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .banned-section .card-title {
@@ -43,6 +45,7 @@
   grid-template-columns: repeat(3, 1fr);
   max-width: 1200px;
   gap: 16px;
+  width: 100%;
 }
 
 .banned-section .card {
@@ -112,4 +115,60 @@
 
 .banned-section .card figcaption {
   color: #727272;
+}
+
+
+@media (max-width: 900px) {
+  .banned-section {
+    padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .banned-section .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banned-section .card {
+    height: auto;
+  }
+
+  .banned-section .card .thumb {
+    height: 220px;
+  }
+
+  .banned-section .banned-title {
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .banned-section {
+    padding-top: 48px;
+  }
+
+  .banned-section .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .banned-section .card {
+    height: auto;
+  }
+
+  .banned-section .card .thumb {
+    height: 200px;
+  }
+
+  .banned-section .banned-title {
+    font-size: 22px;
+  }
+
+  .banned-section .card-title {
+    font-size: 18px;
+  }
+
+  .banned-section .banned-div .banned-title::after {
+    width: 30%;
+  }
 }

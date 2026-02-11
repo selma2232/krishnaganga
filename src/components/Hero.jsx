@@ -25,9 +25,12 @@ export default function Hero() {
     <section className="hero" onMouseEnter={pause} onMouseLeave={resume}>
       <div className="hero-grid">
         <div className="art">
-          <div className="image">
-            <img src={slides[i]} alt="hero slide" />
-          </div>
+          {/* 🔴 FIX: remove absolute wrapper */}
+          <img
+            src={slides[i]}
+            alt="hero slide"
+            className="hero-image"
+          />
 
           <div className="hero-dots">
             {slides.map((_, idx) => (
@@ -39,11 +42,8 @@ export default function Hero() {
               />
             ))}
           </div>
-          <button
-            className="hero-nav left"
-            aria-label="Previous"
-            onClick={prev}
-          >
+
+          <button className="hero-nav left" aria-label="Previous" onClick={prev}>
             ‹
           </button>
           <button className="hero-nav right" aria-label="Next" onClick={next}>

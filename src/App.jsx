@@ -14,6 +14,7 @@ import DonatePage from "./pages/DonatePage";
 import VolunteerPage from "./pages/VolunteerPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import NotFound from "./pages/NotFound";
+import Location from "./pages/location";
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/location" element={<Location />} />
         <Route
           path="/search"
           element={<SearchResultsPage query={searchQuery} />}

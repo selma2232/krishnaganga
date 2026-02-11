@@ -16,11 +16,19 @@ header,
   width: 100%;
 }
 
+/* =========================
+   CONTAINER
+   ========================= */
+
 .container {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* =========================
+   TOP BAR
+   ========================= */
 
 .topbar {
   background: var(--dark);
@@ -31,8 +39,8 @@ header,
 .topbar .container {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
   align-items: center;
+  gap: 16px;
 }
 
 .logo {
@@ -40,11 +48,14 @@ header,
   height: auto;
 }
 
+/* =========================
+   TOP ACTIONS
+   ========================= */
+
 .top-actions {
-  margin-top: -40px;
   display: flex;
-  gap: 18px;
   align-items: center;
+  gap: 18px;
 }
 
 .socials {
@@ -56,17 +67,25 @@ header,
 
 .socials a,
 .socials i {
-  color: var(--grey) !important;
+  color: var(--white);
   text-decoration: none;
 }
 
 .socials a:hover,
 .socials i:hover {
-  color: var(--white) !important;
+  opacity: 1;
 }
 
 .socials i {
   opacity: 0.85;
+}
+
+/* =========================
+   CTA (DESKTOP)
+   ========================= */
+
+.cta {
+  display: flex;
 }
 
 .cta .btn {
@@ -82,9 +101,14 @@ header,
 }
 
 .cta .btn:hover {
-  background: #f0c419;
-  border: 1px solid #8b8b8b;
+  background: var(--gold);
+  border-color: #8b8b8b;
+  color: #111;
 }
+
+/* =========================
+   NAVBAR
+   ========================= */
 
 .navbar {
   background: var(--gold);
@@ -140,10 +164,14 @@ header,
 }
 
 .nav a:hover {
-  background: #f0c419;
+  background: var(--gold);
   color: #111;
   transform: translateX(2px);
 }
+
+/* =========================
+   NAV TOGGLE
+   ========================= */
 
 .nav-toggle {
   display: none;
@@ -154,16 +182,64 @@ header,
   cursor: pointer;
 }
 
+/* =========================
+   MOBILE CTA BAR
+   ========================= */
+
+.mobile-cta-bar {
+  display: none;
+  background: var(--dark);
+}
+
+.mobile-cta-bar .container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+/* =========================
+   SOCIAL ICON BRAND COLORS
+   ========================= */
+
+.socials a[href*="x.com"] i,
+.socials a[href*="twitter"] i {
+  color: #ffffff;
+}
+
+/* Facebook → Blue */
+.socials a[href*="facebook"] i {
+  color: #1877f2;
+}
+
+/* Pinterest → Red */
+.socials a[href*="pinterest"] i {
+  color: #e60023;
+}
+
+/* Google → Yellow */
+.socials a[href*="google"] i {
+  color: #fbbc05;
+}
+
+/* LinkedIn → Blue */
+.socials a[href*="linkedin"] i {
+  color: #0a66c2;
+}
+/* =========================
+   RESPONSIVE
+   ========================= */
+
 @media (max-width: 1100px) {
   .nav {
     gap: 20px;
     font-size: 13px;
   }
+
   .logo {
     height: 64px;
   }
-  .search input {
-    min-width: 150px;
+  .search-box input::placeholder { 
+    font-size: 10px; 
   }
 }
 
@@ -171,9 +247,22 @@ header,
   .container {
     padding: 0 14px;
   }
+
   .logo {
     height: 56px;
   }
+
+  /* Hide desktop CTA */
+  .top-actions .cta {
+    display: none;
+  }
+
+  /* Show burger */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Hide nav (unchanged from old CSS) */
   .nav {
     display: none;
     position: absolute;
@@ -186,14 +275,20 @@ header,
     gap: 12px;
     z-index: 50;
   }
-  .nav-toggle {
+
+  /* Show mobile CTA */
+  .mobile-cta-bar {
     display: block;
   }
-  .search input {
-    min-width: 90px;
-  }
-  .top-actions .cta {
-    display: none;
+
+  .mobile-cta-bar .btn {
+    padding: 11px 31px;
+    font-size: 11px;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }
 
@@ -201,7 +296,25 @@ header,
   .logo {
     height: 48px;
   }
-  .search {
-    display: none;
+  
+}
+
+@media (max-width: 900px) {
+  .top-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .top-actions .cta {
+    display: flex;
+  }
+
+  .cta .btn {
+    padding: 8px 16px; /* smaller for mobile */
+    font-size: 10px;
+  }
+
+  .socials {
+    font-size: 16px;
   }
 }

@@ -2,6 +2,8 @@ import "../styles/Rejuvenate.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import OurCauses from "./OurCauses";
 
+
+
 export default function Rejuvenate({
   videoUrl = "https://youtu.be/qrQVdhSE-Vc",
 }) {
@@ -21,7 +23,8 @@ export default function Rejuvenate({
         </div>
         <div className="content-container">
           <div className="row help-list">
-            <div className="col-xs-12 col-sm-6 col-lg-5">
+            <div className="col-xs-12 col-sm-6 col-lg-5 text-col">
+              <div className="col-xs-12 col-sm-6 col-lg-6 col-lg-offset-1 video-col"></div>
               <article className="media">
                 <a className="pull-left warning-icon-box" href="#">
                   <i className="fas fa-volume-up"></i>
@@ -66,12 +69,11 @@ export default function Rejuvenate({
             <div className="col-xs-12 col-sm-6 col-lg-6 col-lg-offset-1">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
-                  width="555"
-                  height="316"
-                  src={embed}
-                  frameBorder="0"
-                  allowFullScreen
-                />
+  src={embed}
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
               </div>
             </div>
           </div>

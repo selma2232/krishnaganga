@@ -1,0 +1,42 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.PageContainer {
+  max-width: 99px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  min-height: 99vh;   
+}
+
+
+.location-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0 1rem;     }
+
+
+.embed-container {
+  width: 100%;             
+  max-width: 600px;        
+  aspect-ratio: 1 / 1;    
+  margin-top: 2rem;
+  position: relative;
+}
+
+
+.embed-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
