@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <Hero />
       <MidSection />
-      <Rejuvenate videoUrl="https://youtu.be/qrQVdhSE-Vc" />
+      <Rejuvenate videoUrl="https://youtu.be/CcS1cLB3eTw" />
     </>
   );
 }

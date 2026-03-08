@@ -1,70 +1,52 @@
+import { useState } from "react";
 import "../styles/Header.css";
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
-import SearchBox from "./SearchBox";
+import { HiOutlineMenu } from "react-icons/hi";
 
-function Header({ onSearch }) {
+function Header(props) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <>
-      <header>
-        <div className="topbar">
-          <div className="container">
-            <img src={logo} alt="logo" className="logo" />
-            <div className="top-actions">
-              <nav className="socials">
-                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://google.com/" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-google"></i>
-                </a>
-                <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-pinterest"></i>
-                </a>
-              </nav>
+    <header>
+      <div className="navbar">
+        <div className="container nav-inner">
 
-              {/* DESKTOP CTA */}
-              <div className="cta">
-                <NavLink to="/donate" className="btn outline">
-                  DONATE US
-                </NavLink>
-                <NavLink to="/volunteer" className="btn outline">
-                  VOLUNTEER
-                </NavLink>
-              </div>
-            </div>
+          {/* Hamburger */}
+          <button className="nav-toggle" onClick={toggleMenu}>
+            <HiOutlineMenu size={24} />
+          </button>
+
+          {/* Logo */}
+          <img src={logo} alt="logo" className="logo" />
+
+          {/* Navigation */}
+          <nav className={`nav ${menuOpen ? "open" : ""}`}>
+            <NavLink to="/" end onClick={closeMenu}>HOME</NavLink>
+            <NavLink to="/about-us" onClick={closeMenu}>ABOUT</NavLink>
+            <NavLink to="/treatment" onClick={closeMenu}>TREATMENT</NavLink>
+            <NavLink to="/fee" onClick={closeMenu}>FEE</NavLink>
+            <NavLink to="/banned-items" onClick={closeMenu}>BANNED ITEMS</NavLink>
+            <NavLink to="/duration" onClick={closeMenu}>DURATION</NavLink>
+            <NavLink to="/contact-us" onClick={closeMenu}>CONTACT</NavLink>
+          </nav>
+
+          {/* Buttons */}
+          <div className="cta">
+            <NavLink to="/donate" className="btn-old">
+              DONATE US
+            </NavLink>
+            <NavLink to="/volunteer" className="btn-old">
+              VOLUNTEER
+            </NavLink>
           </div>
+
         </div>
-
-        <div className="navbar">
-          <div className="container nav-inner">
-            <button id="nav-toggle" className="nav-toggle">
-              <i className="fas fa-bars"></i>
-            </button>
-
-            <nav className="nav">
-              <NavLink to="/" end>HOME</NavLink>
-              <NavLink to="/about-us">ABOUT US</NavLink>
-              <NavLink to="/treatment">TREATMENT</NavLink>
-              <NavLink to="/fee">FEE</NavLink>
-              <NavLink to="/banned-items">BANNED ITEMS</NavLink>
-              <NavLink to="/duration">DURATION</NavLink>
-              <NavLink to="/contact-us">CONTACT US</NavLink>
-            </nav>
-
-            <SearchBox onSearch={onSearch} />
-          </div>
-        </div>
-      </header>
-
-     
-    </>
+      </div>
+    </header>
   );
 }
 

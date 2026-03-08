@@ -1,74 +1,67 @@
+/* =========================
+   SECTION
+========================= */
+
 .banned-section {
-  padding-top: 80px;
-  padding-bottom: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: center;
-  box-sizing: border-box;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  padding-bottom: 80px;
 }
 
-.banned-section .card-title {
-  margin: 24px 0;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  color: #727272;
-}
-
-.banned-section .cards-wrap {
-  display: grid;
-  grid-template-rows: auto;
-  width: 100%;
-  position: relative;
-}
+/* =========================
+   TITLE
+========================= */
 
 .banned-section .banned-title {
-  font-weight: 500;
-  font-size: 28px;
-  margin: 0 0 16px;
-  position: relative;
+  font-weight: 700;
+  font-size: 34px;
   text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  letter-spacing: -0.3px;
 }
 
-.banned-section .banned-div .banned-title::after {
+.banned-section .banned-title::after {
   content: "";
-  height: 3px;
+  width: 70px;
+  height: 4px;
   background: #f0c419;
-  border-radius: 2px;
-  width: 15%;
+  border-radius: 4px;
   display: block;
-  margin: 5px auto 0;
+  margin: 14px auto 0;
 }
+
+/* =========================
+   GRID
+========================= */
 
 .banned-section .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1200px;
-  gap: 16px;
-  width: 100%;
+  gap: 40px;
 }
+
+/* =========================
+   CARD
+========================= */
 
 .banned-section .card {
   background: #fff;
-  border: none;
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s ease;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  margin: 0;
 }
 
-.banned-section .card figure {
-  margin: 0;
-  padding: 0;
+.banned-section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.08);
 }
 
-.banned-section .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+/* =========================
+   IMAGE
+========================= */
 
 .banned-section .card .thumb {
   position: relative;
@@ -77,98 +70,102 @@
 }
 
 .banned-section .card .thumb img {
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.banned-section .card .thumb:hover img {
-  transform: scale(1.1);
+.banned-section .card:hover img {
+  transform: scale(1.05);
 }
 
-.banned-section .card .thumb .badge {
+
+.banned-section .badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
   background: #f0c419;
   color: #111;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  padding: 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
+.banned-section .card:hover .badge {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.banned-section .card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin: 22px 0 14px;
+}
+
+.banned-section .card figcaption {
+  padding: 0 18px 22px;
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================
+   DOTS
+========================= */
+
 .banned-section .dots {
-  bottom: -40px;
-  gap: 8px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .banned-section .dot {
-  background: none;
-  border: 1px solid #231f20;
-  height: 12px;
   width: 12px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #1f2937;
+  background: none;
   cursor: pointer;
 }
 
 .banned-section .dot.active {
-  background: #231f20;
+  background: #1f2937;
 }
 
-.banned-section .card figcaption {
-  color: #727272;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-
-@media (max-width: 900px) {
-  .banned-section {
-    padding-top: 60px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
+@media (max-width: 992px) {
   .banned-section .cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .banned-section .card {
-    height: auto;
-  }
-
-  .banned-section .card .thumb {
-    height: 220px;
-  }
-
-  .banned-section .banned-title {
-    font-size: 24px;
-  }
 }
-
 
 @media (max-width: 600px) {
   .banned-section {
-    padding-top: 48px;
+    padding: 70px 16px;
   }
 
   .banned-section .cards {
     grid-template-columns: 1fr;
   }
 
-  .banned-section .card {
-    height: auto;
+  .banned-section .banned-title {
+    font-size: 26px;
   }
 
   .banned-section .card .thumb {
-    height: 200px;
-  }
-
-  .banned-section .banned-title {
-    font-size: 22px;
-  }
-
-  .banned-section .card-title {
-    font-size: 18px;
-  }
-
-  .banned-section .banned-div .banned-title::after {
-    width: 30%;
+    height: 220px;
   }
 }

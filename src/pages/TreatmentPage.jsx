@@ -1,15 +1,15 @@
 import Hero from "../components/Hero";
-import MidSection from "../components/MidSection";
+import TreatmentServices from "../components/TreatmentServices";
 import TreatmentSection from "../components/TreatmentSection";
-import OurCauses from "../components/OurCauses";
+
 
 export default function TreatmentPage() {
   return (
     <>
-      <Hero />
-      <MidSection />
+    <Hero />
+ <TreatmentServices />
       <TreatmentSection />
-      <OurCauses />
+ 
     </>
   );
 }

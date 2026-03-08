@@ -12,7 +12,8 @@ export default function Contact({ onSubmit }) {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 
-  // console.log(errors);
+ 
+
 
   function validate() {
     const e = {};
@@ -67,6 +68,27 @@ export default function Contact({ onSubmit }) {
   }
 
   return (
+    <div className="contact-wrapper">
+      <div className="contact-map">
+        <div className="contact-map-header">
+         <h2>Find Us Here</h2>
+  <p>
+   Our office is located in Biratnagar, Nepal.
+  </p>
+</div>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57155.73338895946!2d87.23060759124789!3d26.44820654311647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef744704331cc5%3A0x6d9a85e45c54b3fc!2sBiratnagar%2056613!5e0!3m2!1sen!2snp!4v1772343004373!5m2!1sen!2snp"
+    width="100%"
+    height="450"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Biratnagar Map"
+  ></iframe>
+</div>
+            
     <section className="contact-section container">
       <div>
         <h3>Send us Message</h3>
@@ -90,6 +112,7 @@ export default function Contact({ onSubmit }) {
               />
             </div>
           </div>
+       
           <div>
             <label>
               Subject<span style={{ color: "#c8102e" }}> *</span>
@@ -124,22 +147,26 @@ export default function Contact({ onSubmit }) {
         <h3>Get in touch</h3>
         <div>
           <span>
-            <strong>Address:</strong> Janapath Tole,Biratnagar
+            <i className="fa-solid fa-location-dot"></i>
+            <strong>Address:</strong> Janapath Tole, Biratnagar
             <br />
             Nepal
           </span>
           <span>
+              <i className="fa-solid fa-envelope"></i>
             <strong>E-Mail:</strong>{" "}
             <a href="mailto:krishnaganga@gmail.com"> krishnaganga@gmail.com</a>
           </span>
           <span>
+               <i className="fa-solid fa-phone"></i>
             <strong>Tel:</strong> 021-475089
           </span>
           <span>
-            <strong>Fax:</strong> 021-476089
+        
           </span>
         </div>
       </aside>
     </section>
+    </div>
   );
 }

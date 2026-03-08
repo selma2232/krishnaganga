@@ -8,6 +8,10 @@
 .mid-section .container.section {
   padding-bottom: 32px;
 }
+.mid-section {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  padding-bottom: 80px;
+}
 
 .mid-section .section {
   padding-top: 80px;
@@ -15,19 +19,20 @@
 }
 .mid-section .section-title {
   font-weight: 800;
-  font-size: 24px;
+  font-size: 36px;
   margin: 0 0 26px;
   text-align: center;
   display: block;
+    letter-spacing: -0.5px;
 }
 
 .mid-section .section-title::after {
   content: "";
   display: block;
-  height: 3px;
+  height: 4px;
   background: #f0c419;
   border-radius: 2px;
-  width: 96%;
+  width: 120%;
   margin: 10px auto 0;
 }
 
@@ -49,13 +54,24 @@
   align-items: stretch;
 }
 .mid-section .card {
-  background: #fff;
-  border: none;
+  background: #ffffff ;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  margin: 0;
+
+}
+.badge {
+  transition: all 0.3s ease;
+}
+
+.card:hover .badge {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.mid-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
 }
 .mid-section .card figure {
   margin: 0;
@@ -63,10 +79,10 @@
 }
 .mid-section .card-title {
   margin: 24px 0;
-  font-weight: 500;
+  font-weight: 700;
   color: #333;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
 }
 .mid-section .card .thumb {
   position: relative;
@@ -78,6 +94,10 @@
   height: 100%;
   object-fit: cover;
   display: block;
+    transition: transform 0.5s ease;
+}
+.mid-section .card:hover img {
+  transform: scale(1.05);
 }
 .mid-section .card .thumb .badge {
   position: absolute;

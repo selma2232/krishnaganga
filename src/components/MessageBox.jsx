@@ -1,77 +1,95 @@
-import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState } from "react";
+import { FaComment, FaTimes, FaPhone, FaWhatsapp } from "react-icons/fa";
 import "../styles/MessageBox.css";
 
 export default function MessageBox({ to = "krishnagarg2@gmail.com" }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
   const [open, setOpen] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const form = new FormData(e.currentTarget);
     const name = form.get("name")?.toString().trim();
     const email = form.get("email")?.toString().trim();
     const message = form.get("message")?.toString().trim();
+
     const subject = `New message from ${name || "website"}`;
     const body = encodeURIComponent(
-      `From: ${name || "Anonymous"} <${email || ""}>)\n\n${message || ""}`
+      `From: ${name || "Anonymous"} <${email || ""}>\n\n${message || ""}`
     );
+
     window.location.href = `mailto:${to}?subject=${encodeURIComponent(
       subject
     )}&body=${body}`;
   }
 
-  if (!mounted) return null;
+  return (
+    <>
+      {/* Floating Button Stack */}
+      <div className="message-wrapper">
 
-  return createPortal(
-    <section className="message-section">
-      <button
-        type="button"
-        aria-label={open ? "Close message box" : "Open message box"}
-        onClick={() => setOpen((v) => !v)}
-        className="message-box-button"
-      >
-        {open ? (
-          <i className="fas fa-angle-right message-icon"></i>
-        ) : (
-          <i className="fas fa-comment message-icon"></i>
-        )}
-      </button>
+        {/* Chat Toggle Button */}
+        <button
+          type="button"
+          aria-label={open ? "Close chat" : "Open chat"}
+          onClick={() => setOpen((v) => !v)}
+          className="floating-btn chat-btn"
+        >
+          {open ? <FaTimes size={20} /> : <FaComment size={20} />}
+        </button>
 
+        {/* Call Button */}
+        <a
+          href="tel:021475089"
+          className="floating-btn call-btn"
+          aria-label="Call us"
+        >
+          <FaPhone size={20} />
+        </a>
+
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/97721475089"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="floating-btn whatsapp-btn"
+          aria-label="Chat on WhatsApp"
+        >
+          <FaWhatsapp size={20} />
+        </a>
+      </div>
+
+      {/* Chat Popup */}
       {open && (
-        <div role="dialog" aria-modal="true" className="message-dialog-box">
-          <h4 style={{ margin: "4px 0 12px" }}>Chat with Us</h4>
-          <p style={{ marginTop: 0, color: "#888", fontSize: 13 }}>
-            We typically reply in a few minutes.
+        <div className="message-dialog-box">
+          <h4>Chat with Us</h4>
+          <p className="chat-sub">
+            We typically reply within a few minutes.
           </p>
-          <form onSubmit={handleSubmit} style={{ display: "grid", gap: 10 }}>
-            <input name="name" placeholder="Your name" className="inputStyle" />
+
+          <form onSubmit={handleSubmit}>
+            <input name="name" placeholder="Your name" />
             <input
               name="email"
               type="email"
               placeholder="Email (optional)"
-              className="inputStyle"
             />
             <textarea
               name="message"
-              rows={5}
+              rows={4}
               placeholder="Type your message..."
-              className="textareaStyle"
               required
             />
-            <button type="submit" className="buttonStyle">
+            <button type="submit" className="send-btn">
               Send
             </button>
           </form>
-          <div className="phone">Prefer phone? Call: 021-475089</div>
+
+          <div className="phone-text">
+            Prefer phone? Call: 021-475089
+          </div>
         </div>
       )}
-    </section>,
-    document.body
+    </>
   );
 }

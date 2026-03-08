@@ -3,34 +3,100 @@ import "../styles/DonatePage.css";
 export default function VolunteerPage() {
   return (
     <main>
-      <section className="breadcrumb-section">
-        <p className="breadcrumb-text">Home / Volunteer</p>
-        <h1 className="donate-title">
-          We need you, <strong>Help Us Around</strong>
-        </h1>
-        <div className="donate-image-wrapper">
-          <img
-            alt="Helping hands"
-            src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1600&auto=format&fit=crop"
-            className="donate-image"
-          />
+
+      {/* HERO SECTION */}
+      <section className="donate-heroo">
+        <div className="donate-hero-content">
+          <p className="breadcrumb-text"></p>
+          <h1>
+            We need you, <strong>Help Us Around</strong>
+          </h1>
         </div>
       </section>
 
-      <section className="form-section container">
-        <div className="form-wrapper">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc7JvpJVKCG-jb2m7JLt967YKX4B_blxBg86ff0j0zaNjQ1VQ/viewform?embedded=true"
-            className="donate-form"
-            frameBorder="0"
-            marginHeight="0"
-            marginWidth="0"
-            title="Donate Form"
-          >
-            Loading...
-          </iframe>
+      {/* FORM SECTION */}
+      <section className="form-section">
+        <div className="volunteer-form-wrapper">
+
+          <h2 className="form-title">Volunteer Application Form</h2>
+          <p className="form-subtitle">
+            Let us know your area of interest so we can match you with suitable volunteering tasks.
+          </p>
+
+          <form className="volunteer-form">
+
+            {/* PERSONAL INFO */}
+            <div className="form-grid-2">
+              <div>
+                <label>Full Name *</label>
+                <input type="text" />
+              </div>
+
+              <div>
+                <label>Gender *</label>
+                <select>
+                  <option>Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="form-grid-2">
+              <div>
+                <label>Phone Number *</label>
+                <input type="text" />
+              </div>
+
+              <div>
+                <label>Email Address *</label>
+                <input type="email" />
+              </div>
+            </div>
+
+            <div>
+              <label>Residential Address</label>
+              <textarea rows="3"></textarea>
+            </div>
+
+            {/* VOLUNTEER DETAILS */}
+            <h3 className="section-heading">Volunteer Details</h3>
+
+            <div>
+              <label>Preferred Duration</label>
+              <input type="text" placeholder="e.g. 4 weeks, 2 months" />
+            </div>
+
+            <div className="checkbox-group">
+              <label>Availability</label>
+              <div>
+                <label><input type="checkbox" /> Full-time</label>
+                <label><input type="checkbox" /> Part-time</label>
+              </div>
+            </div>
+
+            {/* MOTIVATION */}
+            <h3 className="section-heading">Motivation and Experience</h3>
+
+            <div>
+              <label>Why do you want to volunteer with us?</label>
+              <textarea rows="4"></textarea>
+            </div>
+
+            <div>
+              <label>Do you have any relevant skills?</label>
+              <textarea rows="3"></textarea>
+            </div>
+
+            {/* SUBMIT BUTTON */}
+            <button type="submit" className="submit-btn">
+              Submit Application
+            </button>
+
+          </form>
         </div>
       </section>
+
     </main>
   );
 }

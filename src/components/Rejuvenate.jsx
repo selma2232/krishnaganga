@@ -1,8 +1,7 @@
+import { useEffect } from "react";
+import { FaVolumeUp, FaUser, FaHeart } from "react-icons/fa";
 import "../styles/Rejuvenate.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import OurCauses from "./OurCauses";
-
-
 
 export default function Rejuvenate({
   videoUrl = "https://youtu.be/qrQVdhSE-Vc",
@@ -11,9 +10,28 @@ export default function Rejuvenate({
     .replace("youtu.be/", "www.youtube.com/embed/")
     .replace("watch?v=", "embed/");
 
+  useEffect(() => {
+    const elements = document.querySelectorAll(".media");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="rejuvenate">
-      <section className="section alt">
+      <section className="rejuvenate-section alt">
         <div className="title-container">
           <header className="section-title">
             <h2>
@@ -21,64 +39,73 @@ export default function Rejuvenate({
             </h2>
           </header>
         </div>
+
         <div className="content-container">
-          <div className="row help-list">
-            <div className="col-xs-12 col-sm-6 col-lg-5 text-col">
-              <div className="col-xs-12 col-sm-6 col-lg-6 col-lg-offset-1 video-col"></div>
-              <article className="media">
-                <a className="pull-left warning-icon-box" href="#">
-                  <i className="fas fa-volume-up"></i>
-                </a>
-                <div className="media-body less-width">
-                  <h3 className="media-heading">Yoga & Meditation</h3>
-                  <p>
-                    Yoga Meditation is the art and science of systematically
-                    observing, accepting, understanding, and training each of
-                    the levels of our being
-                  </p>
-                </div>
-              </article>
-              <article className="media">
-                <a className="pull-left warning-icon-box" href="#">
-                  <i className="fas fa-user"></i>
-                </a>
-                <div className="media-body less-width">
-                  <h3 className="media-heading">
-                    Recreational Art / Craft / Music Therapy
-                  </h3>
-                  <p>
-                    We understand that illness and medical procedures have the
-                    potential to cause anxiety and fear in person. To ease these
-                    feelings and help your family.
-                  </p>
-                </div>
-              </article>
-              <article className="media">
-                <a className="pull-left warning-icon-box" href="#">
-                  <i className="fas fa-heart"></i>
-                </a>
-                <div className="media-body less-width">
-                  <h3 className="media-heading">Well Equipped Library</h3>
-                  <p>
-                    We have well equipped library which consists of various
-                    books on different sectors and subjects.
-                  </p>
-                </div>
-              </article>
-            </div>
-            <div className="col-xs-12 col-sm-6 col-lg-6 col-lg-offset-1">
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe
-  src={embed}
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-/>
+
+          {/* LEFT SIDE - TEXT */}
+          <div className="text-col">
+
+            <article className="media">
+              <div className="warning-icon-box">
+                <FaVolumeUp size={22} />
               </div>
+              <div className="media-body">
+                <h3 className="media-heading">Yoga & Meditation</h3>
+                <p>
+                  Yoga Meditation is the art and science of systematically
+                  observing, accepting, understanding, and training each of
+                  the levels of our being.
+                </p>
+              </div>
+            </article>
+
+            <article className="media">
+              <div className="warning-icon-box">
+                <FaUser size={22} />
+              </div>
+              <div className="media-body">
+                <h3 className="media-heading">
+                  Recreational Art / Craft / Music Therapy
+                </h3>
+                <p>
+                  We understand that illness and medical procedures have the
+                  potential to cause anxiety and fear in person. To ease these
+                  feelings and help your family.
+                </p>
+              </div>
+            </article>
+
+            <article className="media">
+              <div className="warning-icon-box">
+                <FaHeart size={22} />
+              </div>
+              <div className="media-body">
+                <h3 className="media-heading">Well Equipped Library</h3>
+                <p>
+                  We have well equipped library which consists of various
+                  books on different sectors and subjects.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+          {/* RIGHT SIDE - VIDEO */}
+          <div className="video-col">
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                src={embed}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Rejuvenating Activities Video"
+              />
             </div>
           </div>
+
         </div>
       </section>
+
       <OurCauses />
     </div>
   );

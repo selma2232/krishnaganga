@@ -1,118 +1,191 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+
 .fee-page {
-  background-color: #fff;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+  padding-bottom: 100px;
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .fee-header {
-  padding: 48px 16px;
+  padding: 80px 16px 30px;
   text-align: center;
-  color: #222;
 }
 
 .fee-header h1 {
-  font-weight: 500;
-  text-align: center;
-  margin: 0 auto 20px;
-  font-size: 28px;
-  letter-spacing: 0.5px;
-  display: inline-block;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0;
   position: relative;
-  padding-bottom: 15px;
+  display: inline-block;
 }
 
 .fee-header h1::after {
   content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #f0c419;
+  width: 70px;
+  height: 4px;
+  background: #f0c419;
+  display: block;
+  margin: 14px auto 0;
+  border-radius: 4px;
 }
+
+/* =========================
+   CONTENT CONTAINER
+========================= */
 
 .fee-content {
-  max-width: 1200px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 24px;
 }
 
-.fee-content .intro {
-  color: #727272;
-  font-weight: bold;
-  margin-bottom: 4px;
+/* Intro */
+.intro {
+  text-align: center;
+  color: #6b7280;
+  margin: 40px 0 60px;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-p {
-  margin-block-start: 0;
-  margin-block-end: 0;
+/* =========================
+   FEE CARD
+========================= */
+
+.fee-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05);
+  border-left: 6px solid #f0c419;
+  transition: all 0.35s ease;
 }
 
-.fee-content ul {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-  list-style: none;
-}
-.fee-content li,
-ol {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
+.fee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.08);
 }
 
-ol > li:first-child {
-  margin-top: 24px !important;
-}
 
-.fee-content .internal-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  line-height: 1.8;
-  margin-bottom: 16px;
-  margin-left: 24px;
-}
-.fee-content .external-list {
-  margin-top: 16px;
-  line-height: 1.8;
-}
-
-.fee-content .external-list .external-li {
-  margin-top: 32px;
-  margin-bottom: 12px;
-  color: #525252;
-}
-
-.fee-content .internal-list li {
+.fee-amount {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
   margin-bottom: 6px;
-  flex: 0 0 50%;
-  background-color: #52525208;
-  padding-left: 25px;
-  color: #525252;
-  position: relative;
 }
 
-.fee-content .internal-list li::before {
-  content: "⮞";
+.fee-amount span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-left: 6px;
+}
+
+
+.sub-note {
+  margin: 12px 0 24px;
+  font-size: 14px;
+  color: #4b5563;
+  background: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+/* =========================
+   INTERNAL LIST
+========================= */
+
+.internal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.internal-list li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+  padding-left: 18px;
+}
+
+.internal-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #f0c419;
+  border-radius: 50%;
   position: absolute;
   left: 0;
-  color: #525252;
-  font-weight: bold;
+  top: 17px;
 }
 
-.fee-content .note {
-  margin-top: 80px;
-  color: #727272;
-  font-style: italic;
-  text-align: center;
+.internal-list li:last-child {
+  border-bottom: none;
 }
 
-.fee-content .tax {
+/* =========================
+   INFO BOX
+========================= */
+
+.info-box {
+  background: #fff9e6;
+  border: 1px solid #f0c419;
+  border-radius: 12px;
+  padding: 18px;
   font-size: 14px;
-  margin-top: 8px;
-  margin-bottom: 24px;
-  color: #727272;
-  font-style: italic;
+  color: #374151;
+  margin: 50px 0 40px;
+  line-height: 1.6;
+}
+
+/* =========================
+   NOTES
+========================= */
+
+.note {
   text-align: center;
+  font-style: italic;
+  color: #6b7280;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.tax {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #9ca3af;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .fee-header {
+    padding: 60px 16px 20px;
+  }
+
+  .fee-header h1 {
+    font-size: 28px;
+  }
+
+  .fee-card {
+    padding: 24px;
+  }
+
+  .fee-amount {
+    font-size: 24px;
+  }
 }

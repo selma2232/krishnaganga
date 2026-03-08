@@ -14,7 +14,14 @@ import DonatePage from "./pages/DonatePage";
 import VolunteerPage from "./pages/VolunteerPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import NotFound from "./pages/NotFound";
-import Location from "./pages/location";
+import Location from "./pages/location"; 
+import Terms from "./pages/Terms";
+import Privacy from "./pages/privacy";
+
+
+
+
+
 
 function App() {
   const location = useLocation();
@@ -41,6 +48,8 @@ function App() {
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
         <Route path="/location" element={<Location />} />
+         <Route path="/terms" element={<Terms />} />
+  <Route path="/privacy" element={<Privacy />} />
         <Route
           path="/search"
           element={<SearchResultsPage query={searchQuery} />}
@@ -49,8 +58,10 @@ function App() {
       </Routes>
       <Footer />
       {!hideMessageBox && <MessageBox />}
+      
     </div>
   );
 }
 
 export default App;
+
