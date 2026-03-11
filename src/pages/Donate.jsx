@@ -1,9 +1,9 @@
 import { useState } from "react";
-import esewa from "../assets/Esewa_logo.webp.png";
-import khalti from "../assets/lataus (2).png";
-import paypal from "../assets/lataus (1).png";
-import bank from "../assets/lataus.png";
-import stripe from "../assets/lataus (3).png";
+ const esewa = "../assets/Esewa_logo.webp.png";
+ const khalti = "../assets/lataus (2).png";
+ const paypal = "../public/assets/lataus (1).png";
+ const bank = "../assets/lataus.png";
+ const stripe = "../assets/lataus (3).png";
 import "../styles/donate.css";
 export default function DonatePage() {
 

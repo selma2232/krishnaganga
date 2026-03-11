@@ -1,8 +1,9 @@
 import "../styles/Hero.css";
 import { useState, useEffect, useRef } from "react";
-import slideImg1 from "../assets/slideImage1.png";
-import slideImg2 from "../assets/slideImage2.png";
-import slideImg3 from "../assets/slideImage3.png";
+const slideImg1 = "/assets/slideImage1.png";
+
+const slideImg2 = "/assets/slideImage2.png";
+const slideImg3 = "/assets/slideImage3.png";
 
 const slides = [slideImg1, slideImg2, slideImg3];
 

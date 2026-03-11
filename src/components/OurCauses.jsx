@@ -12,7 +12,7 @@ function OurCauses() {
           <div className="items featured">
             <div className="img-thumb">
               <img
-                src="https://media.istockphoto.com/id/1459782858/fi/valokuva/nuoret-aikuiset-yliopisto-opiskelijat-keskustelevat-ik%C3%A4toverinsa-kanssa.jpg?s=2048x2048&w=is&k=20&c=vvCaC3wVWGHjRKoct8tIuItKJtPwNCpyYasBPY7n0Lg="
+                src="https://plus.unsplash.com/premium_photo-1664378616928-dc6842677183?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="mental recovery"
               />
             </div>

@@ -1,6 +1,6 @@
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+const logo = "../assets/logo.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -118,7 +118,7 @@ export default function Footer() {
 
     <p className="copyright">
       &copy; {year} All Rights Reserved by Krishna Ganga HOPE TRUST.  |
-      {" "}Site By :{" "}
+      {" "}Built with:{" "}
       <a href="https://broadpress.org/">Boardpress</a>
     </p>
 

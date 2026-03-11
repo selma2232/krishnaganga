@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/Header.css";
-import logo from "../assets/logo.png";
+const logo = "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { HiOutlineMenu } from "react-icons/hi";
 
