@@ -1,4 +1,4 @@
-import Hero from "../components/Hero";
+import Hero from "../components/Hero.jsx";
 import "../styles/BannedItems.css";
 import { useMemo, useState } from "react";
 import { BannedItems, bannedCardImgs } from "../components/data.js";

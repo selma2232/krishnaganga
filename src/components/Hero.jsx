@@ -1,7 +1,6 @@
 import "../styles/Hero.css";
 import { useState, useEffect, useRef } from "react";
 const slideImg1 = "/assets/slideImage1.png";
-
 const slideImg2 = "/assets/slideImage2.png";
 const slideImg3 = "/assets/slideImage3.png";
 

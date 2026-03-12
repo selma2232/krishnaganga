@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/TreatmentServices.css";
-import { allCards, cardImgs } from "./data.js";
+import { allCards, cardImgs } from "../components/data.js";
 
 function TreatmentServices() {
   return (

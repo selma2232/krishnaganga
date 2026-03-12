@@ -1,5 +1,5 @@
 import React from "react";
-import PageContainer from "../components/PageContainer";
+const PageContainer =  "../page/PageContainer";
 import "../styles/Location.css";
 
 const Location = () => {

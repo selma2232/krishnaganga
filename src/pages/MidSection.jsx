@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import "../styles/MidSection.css";
 
-import { allCards, cardImgs } from "./data.js";
+import { allCards, cardImgs } from "../components/data.js";
 
 function MidSection() {
   const [slide, setSlide] = useState(0);

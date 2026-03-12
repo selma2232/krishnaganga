@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import MessageBox from "./components/MessageBox";
+import MessageBox from "./pages/MessageBox";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import TreatmentPage from "./pages/Treatment";
