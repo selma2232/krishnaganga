@@ -1,15 +1,49 @@
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 const logo = "../assets/logo.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
+
+  async function handleSubscribe(e) {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter your email.");
+      return;
+    }
+
+    try {
+      const res = await fetch("https://formspree.io/f/xjgardvy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setStatus("Thank you for subscribing!");
+        setEmail("");
+      } else {
+        throw new Error();
+      }
+    } catch {
+      setStatus("Subscription failed. Try again.");
+    }
+  }
+
   return (
     <footer className="site-footer">
       <div className="footer-top container">
 
-        {/* Column 1 - About */}
+        {/* Column 1 */}
         <div className="footer-col about">
           <div className="footer-logo">
             <img src={logo} alt="Krishna Ganga HOPE TRUST" />
@@ -26,10 +60,11 @@ export default function Footer() {
               <i className="fas fa-home"></i>
               Janapath Tole, Biratnagar, Nepal
             </li>
-            <li>
-              <i className="fas fa-phone"></i>
-              +977 21 471609
-            </li>
+
+            <a href="tel:+97721471609" className="phone-link">
+              <i className="fas fa-phone"></i> +977 21 471609
+            </a>
+
             <li>
               <i className="fas fa-envelope"></i>
               krishnaganga@gmail.com
@@ -37,8 +72,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 2 - Quick Links */}
-        <div className="  footer-col links ">
+        {/* Column 2 */}
+        <div className="footer-col links">
           <h3>Quick Links</h3>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -52,7 +87,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3 - Useful Links */}
+        {/* Column 3 */}
         <div className="footer-col useful">
           <h3>Useful Links</h3>
           <ul>
@@ -79,58 +114,69 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 4 - Newsletter */}
+        {/* Column 4 */}
         <div className="footer-col newsletter">
           <h3>Newsletter</h3>
           <p>
             Subscribe to our weekly Newsletter and receive updates via email.
           </p>
 
-          <div className="newsletter-box">
-            <input type="email" placeholder="Email*" />
-            <button>Subscribe</button>
-          </div>
-           {/* 👇 SOCIAL ICONS BELOW */}
-  <nav className="socials">
-    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
-      <i className="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://google.com/" target="_blank" rel="noopener noreferrer">
-      <i className="fab fa-google"></i>
-    </a>
-    <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-      <i className="fab fa-twitter"></i>
-    </a>
-    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
-      <i className="fab fa-linkedin-in"></i>
-    </a>
-    <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
-      <i className="fab fa-pinterest"></i>
-    </a>
-  </nav>
+          <form className="newsletter-box" onSubmit={handleSubscribe}>
+            <input
+              type="email"
+              placeholder="Email*"
+              value={email}
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+
+          {status && <p className="newsletter-status">{status}</p>}
+
+          {/* SOCIALS */}
+          <nav className="socials">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://biratinfo.com/" target="_blank" rel="noopener noreferrer">
+  <i className="fas fa-b"></i>
+</a>
+
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-twitter"></i>
+            </a>
+
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-pinterest"></i>
+            </a>
+          </nav>
         </div>
 
       </div>
 
-      {/* Bottom Bar */}
-<div className="footer-bottom">
-  <div className="container bottom-inner">
+      {/* Footer bottom */}
+      <div className="footer-bottom">
+        <div className="container bottom-inner">
 
-    <p className="copyright">
-      &copy; {year} All Rights Reserved by Krishna Ganga HOPE TRUST.  |
-      {" "}Built with:{" "}
-      <a href="https://broadpress.org/">Boardpress</a>
-    </p>
+          <p className="copyright">
+            &copy; {year} All Rights Reserved by Krishna Ganga HOPE TRUST. |
+            {" "}Built with:{" "}
+            <a href="https://broadpress.org/">Boardpress</a>
+          </p>
 
-    <div className="footer-bottom-links">
-      <Link to="/terms">Terms & Conditions</Link>
-    
-      <Link to="/privacy">Privacy Policy</Link>
-    </div>
+          <div className="footer-bottom-links">
+            <Link to="/terms">Terms & Conditions</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+          </div>
 
-  </div>
-</div>
-     
+        </div>
+      </div>
     </footer>
   );
 }

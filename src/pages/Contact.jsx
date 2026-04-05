@@ -1,7 +1,7 @@
 import "../styles/Contact.css";
 import { useState } from "react";
 
-function Contact({ onSubmit }) {
+function Contact() {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -14,47 +14,62 @@ function Contact({ onSubmit }) {
 
   function validate() {
     const e = {};
+
     if (!form.name.trim()) e.name = "Name is required";
+
     if (!form.email.trim()) e.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Enter a valid email";
+
     if (!form.subject.trim()) e.subject = "Subject is required";
+
     if (!form.message.trim()) e.message = "Message is required";
+
     setErrors(e);
     return Object.keys(e).length === 0;
   }
 
   async function handleSubmit(ev) {
     ev.preventDefault();
+
     if (!validate()) return;
+
     setStatus({ loading: true, ok: null, msg: "" });
 
     try {
-      if (onSubmit && typeof onSubmit === "function") {
-        await onSubmit(form);
-      } else {
-        await new Promise((r) => setTimeout(r, 700));
-      }
-
-      setStatus({
-        loading: false,
-        ok: true,
-        msg: "Thank you — your message has been sent.",
+      const res = await fetch("https://formspree.io/f/xlgpnvko", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
       });
 
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setErrors({});
+      if (res.ok) {
+        setStatus({
+          loading: false,
+          ok: true,
+          msg: "Thank you — your message has been sent.",
+        });
 
-      setTimeout(() => {
-        setStatus({ msg: "" });
-      }, 3000);
+        setForm({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+
+        setErrors({});
+      } else {
+        throw new Error("Submission failed");
+      }
     } catch (err) {
       setStatus({
         loading: false,
         ok: false,
         msg: "Failed to send message. Try again later.",
       });
-      console.error(err);
     }
   }
 
@@ -63,7 +78,10 @@ function Contact({ onSubmit }) {
   }
 
   function onChange(e) {
-    setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
+    setForm((s) => ({
+      ...s,
+      [e.target.name]: e.target.value,
+    }));
   }
 
   return (
@@ -93,7 +111,12 @@ function Contact({ onSubmit }) {
             <div className="grid-two">
               <div>
                 <label>Name *</label>
-                <input name="name" value={form.name} onChange={onChange} />
+                <input
+                  name="name"
+                  value={form.name}
+                  onChange={onChange}
+                  required
+                />
               </div>
 
               <div>
@@ -103,13 +126,19 @@ function Contact({ onSubmit }) {
                   name="email"
                   value={form.email}
                   onChange={onChange}
+                  required
                 />
               </div>
             </div>
 
             <div>
               <label>Subject *</label>
-              <input name="subject" value={form.subject} onChange={onChange} />
+              <input
+                name="subject"
+                value={form.subject}
+                onChange={onChange}
+                required
+              />
             </div>
 
             <div>
@@ -119,10 +148,13 @@ function Contact({ onSubmit }) {
                 rows={5}
                 value={form.message}
                 onChange={onChange}
+                required
               />
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={status.loading}>
+              {status.loading ? "Sending..." : "Submit"}
+            </button>
           </form>
 
           {status.msg && (
@@ -150,7 +182,7 @@ function Contact({ onSubmit }) {
           </span>
 
           <span>
-            <strong>Tel:</strong> 021-475089
+            <strong>Tel:</strong> +977 9743818792
           </span>
         </aside>
       </section>
@@ -158,20 +190,16 @@ function Contact({ onSubmit }) {
   );
 }
 
-
-
 export default function ContactPage() {
   return (
-    <>
-      <main>
-        <section className="contact-header">
-          <div className="contact-header-container">
-            <h1 className="contact-title">Contact</h1>
-          </div>
-        </section>
+    <main>
+      <section className="contact-header">
+        <div className="contact-header-container">
+          <h1 className="contact-title">Contact</h1>
+        </div>
+      </section>
 
-        <Contact />
-      </main>
-    </>
+      <Contact />
+    </main>
   );
 }
